@@ -1,0 +1,139 @@
+1.Movie class
+_______________________
+
+a) Write a constructor for the class Movie, which takes a String representing the title of the movie, a String representing the studio, and a String representing the rating as its arguments, and sets the respective class properties to these values.
+_____________________________________________________________________________________________________________________________________________________________________
+
+     function Movie(title, studio, rating) {
+  this.title = title;
+  this.studio = studio;
+  this.rating = rating;
+}
+_____________________________________________________________________________________________________________________________________________________________________
+
+b) The constructor for the class Movie will set the class property rating to "PG" as default when no rating is provided.
+_______________________________________________________________________________________________________________________________
+
+class Movie {
+  constructor(title, studio, rating = "PG") {
+    this.title = title;
+    this.studio = studio;
+    this.rating = rating;
+  }
+}
+_____________________________________________________________________________________________________________________________________________________________________
+
+c) Write a method getPG, which takes an array of base type Movie as its argument, and returns a new array of only those movies in the input array with a rating of "PG". You may assume the input array is full of Movie instances. 
+_____________________________________________________________________________________________________________________________________________________________________
+class Movie {
+  constructor(title, studio, rating) {
+    this.title = title;
+    this.studio = studio;
+    this.rating = rating;
+  }
+}
+
+function getPG(movies) {
+  const pgMovies = [];
+  for (let i = 0; i < movies.length; i++) {
+    if (movies[i].rating === "PG") {
+      pgMovies.push(movies[i]);
+    }
+  }
+  return pgMovies;
+}
+_______________________________________________________________________________________________________________________________________________________________________
+
+
+
+d) Write a piece of code that creates an instance of the class Movie with the title “Casino Royale”, the studio “Eon Productions”, and the rating “PG­13”
+_____________________________________________________________________________________________________________________________________________________________________
+
+class Movie {
+  constructor(title, studio, rating) {
+    this.title = title;
+    this.studio = studio;
+    this.rating = rating;
+  }
+}
+
+const movie = new Movie("Casino Royale", "Eon Productions", "PG-13");
+______________________________________________________________________________________________________________________________________________________________________
+
+UBER PRICE
+_____________
+class UberPriceCalculator {
+  constructor(baseFare, costPerMinute, costPerMile, bookingFee) {
+    this.baseFare = baseFare;
+    this.costPerMinute = costPerMinute;
+    this.costPerMile = costPerMile;
+    this.bookingFee = bookingFee;
+  }
+
+  calculatePrice(distanceInMiles, durationInMinutes) {
+    const distanceCost = distanceInMiles * this.costPerMile;
+    const durationCost = durationInMinutes * this.costPerMinute;
+    const totalPrice = this.baseFare + distanceCost + durationCost + this.bookingFee;
+    return totalPrice;
+  }
+}
+
+______________________________________________________________________________________________________________________________________________________________________
+
+Person details
+________________________
+
+class Person {
+  constructor(firstName, lastName, age, gender) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.age = age;
+    this.gender = gender;
+  }
+
+  getFullName() {
+    return this.firstName + ' ' + this.lastName;
+  }
+
+  getAge() {
+    return this.age;
+  }
+
+  getGender() {
+    return this.gender;
+  }
+
+  setFirstName(firstName) {
+    this.firstName = firstName;
+  }
+
+  setLastName(lastName) {
+    this.lastName = lastName;
+  }
+_______________________________________________________________________________________________________________________________________________________________________
+
+circle
+_____________
+
+class Circle {
+  constructor(radius) {
+    this.radius = radius;
+  }
+
+  getArea() {
+    return Math.PI * this.radius * this.radius;
+  }
+
+  getCircumference() {
+    return 2 * Math.PI * this.radius;
+  }
+
+  getDiameter() {
+    return 2 * this.radius;
+  }
+
+  setRadius(radius) {
+    this.radius = radius;
+  }
+}
+______________________________________________________________________________________________________________________________________________________________________
